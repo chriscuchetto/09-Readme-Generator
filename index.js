@@ -13,13 +13,14 @@ const questions = [
         {
             title: "input",
             message: "What is your github username?",
-            name: "github",
+            name: "title",
         },
     ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-   return fs.writeFileSync(fileName, JSON.stringify(data));
+    const exportData = generateMarkDown(data);
+   return fs.writeFileSync(fileName, exportData);
 }
 
 // TODO: Create a function to initialize app
