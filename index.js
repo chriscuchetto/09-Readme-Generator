@@ -5,16 +5,17 @@ const generateMarkDown = require("./utils/generateMarkdown.js");
 
 // TODO: Create an array of questions for user input
 const questions = [
-        {
-            title: "input",
-            message: "What is the title of your project?",
-            name: "title",
-        },
-        {
-            title: "input",
-            message: "What is your github username?",
-            name: "title",
-        },
+    {
+        title: "input",
+        message: "What is your github username?",
+        name: "title",
+    },
+    {
+        title: "list",
+        name: "license",
+        message: "What is your license?",
+        choices: ["APM", "CPAN", "MIT"]
+    },
     ];
 
 // TODO: Create a function to write README file
@@ -28,7 +29,7 @@ function init() {
     inquirer.prompt(questions)
     .then((response) => {
         console.log(response);
-        writeToFile("README.md(Generated)", response);
+        writeToFile("README.md", response);
     });
 }
 // Function call to initialize app
